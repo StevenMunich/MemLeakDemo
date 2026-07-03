@@ -69,8 +69,10 @@ cout << "enter q to delete:\n";
 char q;
 cin >> q;
 //leak or not to leak
-if(q=='q')
-delete chClass; 
+if(q=='q'){
+	delete chClass; 
+	chClass = nullptr; //without this line you have a vulnerability, use after free. "Dangling pointers"
+}
 else
 cout << "raw pointer leaked\n";
 
