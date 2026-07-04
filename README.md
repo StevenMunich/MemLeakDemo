@@ -1,6 +1,7 @@
 NEW keyword means you are creating an object(using a pointer) to the heap
-if the function exits and you do not "free" that memory you get what is called a memory leak. Your program now has memory filled and no way of accessing it for deletion.
-so, you typed delete obj and assumed the stack cleared everything up. WRONG
+if the function exits and you do not "free" that memory you get what is called a memory leak. Your program now has memory filled and no way of accessing it for deletion. Objects stay in HEAP memory even after a function ends.
+
+So, you typed delete obj and assumed the stack cleared everything up. WRONG
 without assigning the value of the pointer you USED nullptr. You get what is called a "dangling pointer" which hackers LOVE.
 <img width="785" height="353" alt="dangling-pointerUAF" src="https://github.com/user-attachments/assets/a8a688b1-7b11-43e5-8061-159d0af66e11" />
 
